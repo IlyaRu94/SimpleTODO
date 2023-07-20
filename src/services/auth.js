@@ -7,3 +7,7 @@ export const authUser = function (login, password) {
   appState.currentUser = user;
   return true;
 };
+
+export const logout = function() {
+  appState.currentUser = null;
+}

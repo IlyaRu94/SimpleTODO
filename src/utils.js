@@ -10,6 +10,35 @@ export const addToStorage = function (obj, key) {
 
 export const generateTestUser = function (User) {
   localStorage.clear();
-  const testUser = new User("test", "qwerty123");
+  const testUser = new User("admin", "admin1", false, true);
   User.save(testUser);
 };
+export const generateUser = function (User, login, password, isAdmin) {
+  const testUser = new User(login, password, true, isAdmin);
+
+  if (testUser.hasAccess){
+    alert('Пользователь уже существует!')
+  }else{
+    alert("Пользователь " + login + " успешно создан");
+    User.save(testUser);
+  }
+};
+
+export const generateTask = function (Task, userId, text, key) {
+  const taskUser = new Task(userId, text, key);
+    Task.save(taskUser);
+};
+
+
+    //не дописана
+export const taskDelete = function (id, storageKey ) {
+      let tasksDelete = getFromStorage(storageKey);
+      function isTask(value) {
+        if (value.id !== this){
+          return value;
+        }
+      }
+      const filtered = tasksDelete.filter(isTask,id);
+      localStorage.setItem(storageKey, JSON.stringify(filtered));
+      return filtered;
+  }

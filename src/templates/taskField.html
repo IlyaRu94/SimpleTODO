@@ -1,1 +1,38 @@
-<h1>Your tasks here</h1>
+<div class="d-flex flex-wrap justify-content-between todo">
+    <div class="card">
+        <div class="card-title">Ожидающие выполнения</div>
+        <div class="card-body align-self-start"></div>
+        <div class="dropdown card-dropdown">
+            <ul class="card-dropdown-menu" aria-labelledby="readyButton" id="readyList">
+            </ul>
+            <button class="btn add-task-btn _dropdown-toggle dropdown-btn" type="button" id="readyButton" data-bs-toggle="dropdown" aria-expanded="false">
+                &plus; Добавить задачу
+            </button>
+            <div class="forInputReady"></div>
+        </div>
+    </div>
+    <div class="card align-self-start">
+        <div class="card-title">Выполняемые</div>
+        <div class="card-body"></div>
+        <div class="dropdown card-dropdown">
+            <ul class="card-dropdown-menu" aria-labelledby="progressButton" id="progressList">
+            </ul>
+            <button class="btn add-task-btn _dropdown-toggle dropdown-btn" type="button" id="progressButton" data-bs-toggle="dropdown" aria-expanded="false">
+                &plus; Добавить задачу
+            </button>
+            <div class="forInputProgress"></div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-title">Завершенные</div>
+        <div class="card-body"></div>
+        <div class="dropdown card-dropdown">
+            <ul class="card-dropdown-menu" aria-labelledby="finishButton" id="finishList">
+            </ul>
+            <button class="btn add-task-btn _dropdown-toggle dropdown-btn" type="button" id="finishButton" data-bs-toggle="dropdown" aria-expanded="false">
+                &plus; Добавить задачу
+            </button>
+            <div class="forInputFinish"></div>
+        </div>
+    </div>
+</div>
