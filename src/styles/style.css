@@ -9,8 +9,6 @@
 }
 .card {
   padding: 15px;
-  min-width: 290px;
-  max-width: 380px;
   width: 30%;
   margin: 20px;
   background: #EBECF0;
@@ -36,14 +34,47 @@
     right: 10px;
     position: absolute;
     color: red;
+    cursor: pointer;
 }
 
+.admin-users{
+	width: 100%;
+    padding: 20px;
+}
+.admin-users-list{
+	padding: 15px;
+    width: 100%;
+    display: flex;
+    background: #EBECF0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.admin-users-list__item{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40px;
+}
+.admin-users-list__item span{
+  width: 30%;
+}
+.delUser, .viewUser{
+  cursor:pointer;
+  color:red;
+}
+h2,h1{
+  color:white;
+}
 
 .dropdownmenu {
   position: relative;
   display: inline-block;
 }
 
+.activeblock{
+  background: white;
+}
 
 .dropdown-content {
   right: 0;
@@ -76,4 +107,24 @@
 }
 .noblock{
   display:none;
+}
+.selected{
+  background: #0079BF;
+  color:white;
+}
+
+#welcome{
+  color:white;
+  text-align: center;
+}
+
+.dropdownmenu:hover .btn-outline-info {
+  color: #000;
+  background-color: #0dcaf0;
+}
+@media (max-width: 1400px) {
+  .card{width:45%;}
+}
+@media (max-width: 990px) {
+  .card{width:100%;}
 }

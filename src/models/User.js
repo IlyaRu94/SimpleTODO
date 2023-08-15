@@ -11,6 +11,7 @@ export class User extends BaseModel {
     this.nopass = nopass || false;
   }
 
+  //функция проверки авторизации
   get hasAccess() {
     let users = getFromStorage(this.storageKey);
     if (users.length == 0) return false;
@@ -23,6 +24,7 @@ export class User extends BaseModel {
     }
     return false;
   }
+
   static save(user) {
     try {
       addToStorage(user, user.storageKey);

@@ -30,8 +30,8 @@ export const generateTask = function (Task, userId, text, key) {
 };
 
 
-    //не дописана
-export const taskDelete = function (id, storageKey ) {
+    //функция удаления таск и пользователей
+export const taskAndUserDelete = function (id, storageKey ) {
       let tasksDelete = getFromStorage(storageKey);
       function isTask(value) {
         if (value.id !== this){
@@ -42,3 +42,12 @@ export const taskDelete = function (id, storageKey ) {
       localStorage.setItem(storageKey, JSON.stringify(filtered));
       return filtered;
   }
+
+
+  
+//функция считывания пользователей из локального хранилища
+export const usersInStorage = function (storageKey) {
+  let usersIn = getFromStorage(storageKey);
+  if (usersIn.length == 0) return false;
+  return usersIn;
+}
